@@ -1,3 +1,6 @@
 spring:
   profiles:
     include: h2
+  batch:
+    # Batch App Meta database 생성 Option
+    initialize-schema: always
