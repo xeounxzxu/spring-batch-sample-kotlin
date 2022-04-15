@@ -1,6 +1,6 @@
 package io.example.dataserving.job
 
-import org.noveltaaker.klogger.KLogger
+import org.noveltaaker.jlogger.JLogger
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
 import org.springframework.batch.repeat.RepeatStatus
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration
 class SimpleJob1Configuration constructor(
     val jobBuilderFactory: JobBuilderFactory,
     val stepBuilderFactory: StepBuilderFactory
-) : KLogger {
+) : JLogger {
 
     @Bean
     fun simpleJob1() =
