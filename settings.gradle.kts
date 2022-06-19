@@ -1,1 +1,1 @@
-rootProject.name = "dataserving"
+rootProject.name = "kotlin-batch"
