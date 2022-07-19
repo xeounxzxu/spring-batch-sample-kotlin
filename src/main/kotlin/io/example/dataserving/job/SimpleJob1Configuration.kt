@@ -1,9 +1,9 @@
 package io.example.dataserving.job
 
+import io.example.dataserving.task.SimpleJob1Task1
 import io.example.dataserving.utils.LogUtil
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
-import org.springframework.batch.repeat.RepeatStatus
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
@@ -27,9 +27,9 @@ class SimpleJob1Configuration constructor(
         stepBuilderFactory.get("simpleStep1")
             // Step 안에 수행 될 기능을 명시
             // tasklet 단일로 수행될 커스트텀한 기능들을 선언할 때 사용
-            .tasklet { contribution, chunkContext ->
-                logUtil.getLogger().info("===> simpleStep1")
-                RepeatStatus.FINISHED
-            }
+            .tasklet(simpleJob1Task1())
             .build()
+
+    @Bean
+    fun simpleJob1Task1() = SimpleJob1Task1(logUtil)
 }
