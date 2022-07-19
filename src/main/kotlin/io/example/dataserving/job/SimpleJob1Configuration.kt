@@ -1,6 +1,6 @@
 package io.example.dataserving.job
 
-import org.noveltaaker.jlogger.JLogger
+import io.example.dataserving.utils.LogUtil
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
 import org.springframework.batch.repeat.RepeatStatus
@@ -10,8 +10,9 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class SimpleJob1Configuration constructor(
     val jobBuilderFactory: JobBuilderFactory,
-    val stepBuilderFactory: StepBuilderFactory
-) : JLogger {
+    val stepBuilderFactory: StepBuilderFactory,
+    val logUtil: LogUtil
+) {
 
     @Bean
     fun simpleJob1() =
@@ -27,7 +28,7 @@ class SimpleJob1Configuration constructor(
             // Step 안에 수행 될 기능을 명시
             // tasklet 단일로 수행될 커스트텀한 기능들을 선언할 때 사용
             .tasklet { contribution, chunkContext ->
-                logger.info("===> simpleStep1")
+                logUtil.getLogger().info("===> simpleStep1")
                 RepeatStatus.FINISHED
             }
             .build()

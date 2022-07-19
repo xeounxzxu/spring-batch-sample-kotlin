@@ -1,6 +1,6 @@
 package io.example.dataserving.job
 
-import org.noveltaaker.jlogger.JLogger
+import io.example.dataserving.utils.LogUtil
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.JobScope
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
@@ -12,8 +12,9 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class SimpleJob2Configuration constructor(
     val jobBuilderFactory: JobBuilderFactory,
-    val stepBuilderFactory: StepBuilderFactory
-) : JLogger {
+    val stepBuilderFactory: StepBuilderFactory,
+    val logUtil: LogUtil
+)  {
 
     @Bean
     fun simpleJob2() = jobBuilderFactory.get("simpleJob2")
@@ -26,8 +27,8 @@ class SimpleJob2Configuration constructor(
     fun simpleStep2(@Value("#{jobParameters[requestDate]}") requestDate: String?) =
         stepBuilderFactory.get("simpleStep2")
             .tasklet { contribution, chunkContext ->
-                logger.info("====> simple step 2")
-                logger.info("[requestDate]:$requestDate")
+                logUtil.getLogger().info("====> simple step 2")
+                logUtil.getLogger().info("[requestDate]:$requestDate")
                 RepeatStatus.FINISHED
             }
             .build()
