@@ -4,3 +4,5 @@ spring:
   batch:
     # Batch App Meta database 생성 Option
     initialize-schema: always
+    job:
+      enabled: false
