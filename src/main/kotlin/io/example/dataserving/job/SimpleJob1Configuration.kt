@@ -6,6 +6,7 @@ import io.example.dataserving.task.SimpleJob1Task1
 import io.example.dataserving.utils.LogUtil
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
+import org.springframework.batch.core.launch.support.RunIdIncrementer
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
@@ -22,6 +23,7 @@ class SimpleJob1Configuration constructor(
         jobBuilderFactory.get("simpleJob1")
             .listener(simpleJob1Listener())
             .listener(simpleJob1OtherListener())
+            .incrementer(RunIdIncrementer())
             .start(simpleStep1())
             .build()
 
