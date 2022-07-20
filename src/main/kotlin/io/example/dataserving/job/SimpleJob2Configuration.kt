@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class SimpleJob2Configuration constructor(
-    val jobBuilderFactory: JobBuilderFactory,
-    val stepBuilderFactory: StepBuilderFactory,
-    val logUtil: LogUtil
+    private val jobBuilderFactory: JobBuilderFactory,
+    private val stepBuilderFactory: StepBuilderFactory,
+    private val logUtil: LogUtil
 )  {
 
     @Bean

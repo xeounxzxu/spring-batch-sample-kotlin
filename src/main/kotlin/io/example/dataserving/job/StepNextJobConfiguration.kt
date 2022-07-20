@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class StepNextJobConfiguration constructor(
-    val jobBuilderFactory: JobBuilderFactory,
-    val stepBuilderFactory: StepBuilderFactory,
-    val logUtil: LogUtil
+    private val jobBuilderFactory: JobBuilderFactory,
+    private val stepBuilderFactory: StepBuilderFactory,
+    private val logUtil: LogUtil
 ) {
 
     @Bean
