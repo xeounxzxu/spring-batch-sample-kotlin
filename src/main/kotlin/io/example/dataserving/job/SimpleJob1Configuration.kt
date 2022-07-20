@@ -1,5 +1,7 @@
 package io.example.dataserving.job
 
+import io.example.dataserving.job.listener.SimpleJob1Listener
+import io.example.dataserving.job.listener.SimpleJob1OtherListener
 import io.example.dataserving.task.SimpleJob1Task1
 import io.example.dataserving.utils.LogUtil
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
@@ -18,6 +20,8 @@ class SimpleJob1Configuration constructor(
     fun simpleJob1() =
         //  simpleJob 이라는 Batch Job 을 생성
         jobBuilderFactory.get("simpleJob1")
+            .listener(simpleJob1Listener())
+            .listener(simpleJob1OtherListener())
             .start(simpleStep1())
             .build()
 
@@ -32,4 +36,10 @@ class SimpleJob1Configuration constructor(
 
     @Bean
     fun simpleJob1Task1() = SimpleJob1Task1(logUtil)
+
+    @Bean
+    fun simpleJob1Listener() = SimpleJob1Listener(logUtil)
+
+    @Bean
+    fun simpleJob1OtherListener() = SimpleJob1OtherListener(logUtil)
 }
