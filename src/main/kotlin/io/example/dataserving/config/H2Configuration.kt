@@ -1,32 +1,27 @@
 package io.example.dataserving.config
 
 import com.zaxxer.hikari.HikariDataSource
+import io.example.dataserving.utils.LogUtil
 import org.h2.tools.Server
 import org.springframework.boot.context.properties.ConfigurationProperties
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Profile
-import org.springframework.context.event.ContextStoppedEvent
-import org.springframework.context.event.EventListener
 import java.sql.SQLException
 
-@Profile("/!mysql")
 @Configuration
-class H2Configuration {
+@Profile("/!mysql")
+class H2Configuration constructor(
+    private val logUtil: LogUtil
+) {
 
-    private var server: Server? = null
-
+    @Bean
     @ConfigurationProperties("spring.datasource.hikari")
     @Throws(SQLException::class)
     fun dataSource(): HikariDataSource? {
-
-        server = Server.createTcpServer("-tcp", "-tcpAllowOthers", "-ifNotExists", "-tcpPort", 9095.toString() + "")
+        logUtil.getLogger().info("Started H2 DataBase ==============")
+        Server.createTcpServer("-tcp", "-tcpAllowOthers", "-ifNotExists", "-tcpPort", 9095.toString() + "")
             .start()
-
         return HikariDataSource()
-    }
-
-    @EventListener(ContextStoppedEvent::class)
-    fun stopServer() {
-        server!!.stop()
     }
 }
