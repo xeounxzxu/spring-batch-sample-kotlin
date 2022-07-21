@@ -1,6 +1,22 @@
 spring:
-  profiles:
-    include: h2
+  sql:
+    init:
+      mode: always
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+      defer-datasource-initialization: true
+      hibernate:
+        ddl-auto: create-drop
+      h2:
+        console:
+          enabled: true
+    datasource:
+      hikari:
+        jdbc-url: jdbc:h2:tcp://localhost:9095/mem:testdb
+        driver-class-name: org.h2.Driver
+        username: sa
+        password:
+
   batch:
     # Batch App Meta database 생성 Option
     initialize-schema: always
