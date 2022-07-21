@@ -1,4 +1,4 @@
-package io.example.dataserving.job.task
+package io.example.dataserving.job.tasklet
 
 import io.example.dataserving.utils.LogUtil
 import org.springframework.batch.core.ExitStatus

@@ -2,7 +2,7 @@ package io.example.dataserving.job
 
 import io.example.dataserving.job.listener.SimpleJob1Listener
 import io.example.dataserving.job.listener.SimpleJob1OtherListener
-import io.example.dataserving.job.task.SimpleJob1Task1
+import io.example.dataserving.job.tasklet.SimpleJob1Task1
 import io.example.dataserving.utils.LogUtil
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
