@@ -16,7 +16,10 @@ spring:
 logging:
   level:
     org:
+      springframework.batch.item.database: debug
       hibernate.type.descriptor.sql.BasicBinder: TRACE
+    web: trace
+
 
 ---
 
