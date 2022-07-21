@@ -10,18 +10,27 @@ import org.springframework.context.annotation.Profile
 import java.sql.SQLException
 
 @Configuration
-@Profile("/!mysql")
-class H2Configuration constructor(
+class DataSourceConfiguration constructor(
     private val logUtil: LogUtil
 ) {
 
-    @Bean
+    @Bean("dataSource")
+    @Profile("!mysql")
     @ConfigurationProperties("spring.datasource.hikari")
     @Throws(SQLException::class)
-    fun dataSource(): HikariDataSource? {
+    fun dataSourceH2(): HikariDataSource? {
         logUtil.getLogger().info("Started H2 DataBase ==============")
+
         Server.createTcpServer("-tcp", "-tcpAllowOthers", "-ifNotExists", "-tcpPort", 9095.toString() + "")
             .start()
+
+        return HikariDataSource()
+    }
+
+    @Bean
+    @Profile("mysql")
+    @ConfigurationProperties("spring.datasource.hikari")
+    fun dataSource(): HikariDataSource {
         return HikariDataSource()
     }
 }

@@ -39,6 +39,8 @@ spring:
       driver-class-name: org.h2.Driver
       username: sa
       password:
+      auto-commit: false
+      maximum-pool-size: 10
   batch:
     job:
       enabled: true
