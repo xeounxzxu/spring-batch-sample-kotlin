@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class StepNextJobConfiguration constructor(
+class SimpleJob3StepNextConfiguration constructor(
     private val jobBuilderFactory: JobBuilderFactory,
     private val stepBuilderFactory: StepBuilderFactory,
     private val logUtil: LogUtil
