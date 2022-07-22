@@ -1,6 +1,6 @@
 package io.example.dataserving.job
 
-import io.example.dataserving.job.incrementer.CustomJobIncrementer
+import io.example.dataserving.job.incrementer.DateIncrementer
 import io.example.dataserving.utils.LogUtil
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.JobScope
@@ -14,13 +14,14 @@ import org.springframework.context.annotation.Configuration
 class SimpleJob2Configuration constructor(
     private val jobBuilderFactory: JobBuilderFactory,
     private val stepBuilderFactory: StepBuilderFactory,
-    private val logUtil: LogUtil
+    private val logUtil: LogUtil,
+    private val dateIncrementer: DateIncrementer
 ) {
 
     @Bean
     fun simpleJob2() = jobBuilderFactory.get("simpleJob2")
         .start(simpleStep2(null))
-        .incrementer(CustomJobIncrementer())
+        .incrementer(dateIncrementer)
         .build()
 
     @Bean

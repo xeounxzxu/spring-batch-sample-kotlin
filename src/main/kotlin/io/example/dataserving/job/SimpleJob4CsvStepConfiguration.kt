@@ -4,7 +4,6 @@ import io.example.dataserving.dto.UserDTO
 import io.example.dataserving.job.repository.UserRepository
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
-import org.springframework.batch.core.launch.support.RunIdIncrementer
 import org.springframework.batch.item.ItemWriter
 import org.springframework.batch.item.file.FlatFileItemReader
 import org.springframework.batch.item.file.LineMapper
@@ -20,7 +19,6 @@ class SimpleJob4CsvStepConfiguration constructor(
 ) {
     @Bean
     fun simpleJob4() = jobBuilderFactory.get("simpleJob4")
-        .incrementer(RunIdIncrementer())
         .start(simpleJob4Step1())
         .build()
 
