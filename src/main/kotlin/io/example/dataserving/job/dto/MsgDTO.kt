@@ -1,4 +1,4 @@
-package io.example.dataserving.dto
+package io.example.dataserving.job.dto
 
 data class MsgDTO(
     private val status: Int,

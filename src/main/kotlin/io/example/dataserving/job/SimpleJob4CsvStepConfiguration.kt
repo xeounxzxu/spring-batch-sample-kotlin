@@ -1,7 +1,7 @@
 package io.example.dataserving.job
 
-import io.example.dataserving.dto.UserDTO
-import io.example.dataserving.job.repository.UserRepository
+import io.example.dataserving.job.dto.UserDTO
+import io.example.dataserving.repository.UserRepository
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
 import org.springframework.batch.item.ItemWriter

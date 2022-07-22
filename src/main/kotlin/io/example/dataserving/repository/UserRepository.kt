@@ -1,4 +1,4 @@
-package io.example.dataserving.job.repository
+package io.example.dataserving.repository
 
 import io.example.dataserving.domain.User
 import org.springframework.data.jpa.repository.JpaRepository

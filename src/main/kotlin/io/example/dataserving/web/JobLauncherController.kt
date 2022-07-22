@@ -1,6 +1,6 @@
 package io.example.dataserving.web
 
-import io.example.dataserving.dto.MsgDTO
+import io.example.dataserving.job.dto.MsgDTO
 import io.example.dataserving.job.incrementer.DateIncrementer
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.launch.JobLauncher

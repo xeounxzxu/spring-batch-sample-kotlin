@@ -1,4 +1,4 @@
-package io.example.dataserving.dto
+package io.example.dataserving.job.dto
 
 import io.example.dataserving.domain.User
 
