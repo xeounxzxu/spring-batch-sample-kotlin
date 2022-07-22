@@ -1,8 +1,10 @@
 package io.example.dataserving.web
 
+import io.example.dataserving.dto.MsgDTO
 import io.example.dataserving.job.incrementer.DateIncrementer
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.launch.JobLauncher
+import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -16,10 +18,13 @@ class JobLauncherController constructor(
 ) {
 
     @PostMapping("csv")
-    fun runCsvJob() {
+    fun runCsvJob(): MsgDTO {
 
         val jobParameters = dateIncrementer.getNext(null)
 
         jobLauncher.run(simpleJob4, jobParameters)
+
+
+        return MsgDTO(HttpStatus.OK.value(), "SUCCESS")
     }
 }
