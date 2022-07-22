@@ -24,7 +24,6 @@ class JobLauncherController constructor(
 
         jobLauncher.run(simpleJob4, jobParameters)
 
-
         return MsgDTO(HttpStatus.OK.value(), "SUCCESS")
     }
 }

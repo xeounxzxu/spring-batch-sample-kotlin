@@ -1,7 +1,6 @@
 package io.example.dataserving.dto
 
 import io.example.dataserving.domain.User
-import java.util.Date
 
 data class UserDTO(
     private var id: Long? = null,

@@ -43,20 +43,21 @@ class SimpleJob4CsvStepConfiguration constructor(
 
             this.setLinesToSkip(1)
 
-            this.setLineMapper(LineMapper { line, lineNumber ->
+            this.setLineMapper(
+                LineMapper { line, lineNumber ->
 
-                val listArray = line.split(",")
+                    val listArray = line.split(",")
 
-                UserDTO(
-                    listArray[0].toLong(),
-                    listArray[3].toDouble(),
-                    listArray[4],
-                    listArray[5],
-                    listArray[6],
-                    listArray[7],
-                )
-            })
-
+                    UserDTO(
+                        listArray[0].toLong(),
+                        listArray[3].toDouble(),
+                        listArray[4],
+                        listArray[5],
+                        listArray[6],
+                        listArray[7],
+                    )
+                }
+            )
         }
 
     @Bean

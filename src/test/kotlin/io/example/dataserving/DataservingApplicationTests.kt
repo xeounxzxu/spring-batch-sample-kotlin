@@ -9,5 +9,4 @@ class DataservingApplicationTests {
     @Test
     fun contextLoads() {
     }
-
 }
