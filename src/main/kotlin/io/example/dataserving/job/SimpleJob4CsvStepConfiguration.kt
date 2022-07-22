@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.core.io.ClassPathResource
 
 @Configuration
-class SimpleJob4ChunkConfiguration constructor(
+class SimpleJob4CsvStepConfiguration constructor(
     private val jobBuilderFactory: JobBuilderFactory,
     private val stepBuilderFactory: StepBuilderFactory,
     private val userRepository: UserRepository
