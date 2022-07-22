@@ -46,7 +46,7 @@ spring:
       maximum-pool-size: 10
   batch:
     job:
-      enabled: true
+      enabled: false
 
 ---
 
