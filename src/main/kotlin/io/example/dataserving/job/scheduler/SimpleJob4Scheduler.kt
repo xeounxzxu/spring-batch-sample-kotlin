@@ -14,7 +14,7 @@ class SimpleJob4Scheduler constructor(
     private val logUtil: LogUtil
 ) {
 
-    @Scheduled(initialDelay = 10000, fixedDelay = 3000 , cron = "0 0/5 * * *")
+    @Scheduled(cron = "* 0/2 * * * *")
     fun runJob() {
 
         logUtil.getLogger().info("started scheduler >>")
