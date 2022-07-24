@@ -1,9 +1,11 @@
 package io.example.dataserving.job
 
+import io.example.dataserving.domain.User
 import io.example.dataserving.job.dto.UserDTO
 import io.example.dataserving.repository.UserRepository
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
+import org.springframework.batch.item.ItemProcessor
 import org.springframework.batch.item.ItemWriter
 import org.springframework.batch.item.file.FlatFileItemReader
 import org.springframework.batch.item.file.LineMapper
@@ -25,8 +27,9 @@ class SimpleJob4CsvStepConfiguration constructor(
     @Bean
     fun simpleJob4Step1() = stepBuilderFactory
         .get("simpleJob4Step1")
-        .chunk<UserDTO, UserDTO>(10)
+        .chunk<UserDTO, User>(10)
         .reader(csvItemReader())
+        .processor(csvItemProcessor())
         .writer(csvItemWriter())
         .build()
 
@@ -61,11 +64,13 @@ class SimpleJob4CsvStepConfiguration constructor(
         }
 
     @Bean
-    fun csvItemWriter() = ItemWriter<UserDTO> {
-        val entities = it.map {
-            it.toEntity()
-        }.toMutableSet()
-        userRepository.saveAll(entities)
+    fun csvItemProcessor(): ItemProcessor<UserDTO, User> = ItemProcessor<UserDTO, User> {
+        it.toEntity()
+    }
+
+    @Bean
+    fun csvItemWriter() = ItemWriter<User> {
+        userRepository.saveAll(it)
         it
     }
 }
