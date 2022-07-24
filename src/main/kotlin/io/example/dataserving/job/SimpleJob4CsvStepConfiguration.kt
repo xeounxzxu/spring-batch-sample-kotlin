@@ -27,7 +27,7 @@ class SimpleJob4CsvStepConfiguration constructor(
     @Bean
     fun simpleJob4Step1() = stepBuilderFactory
         .get("simpleJob4Step1")
-        .chunk<UserDTO, User>(10)
+        .chunk<UserDTO, User>(100)
         .reader(csvItemReader())
         .processor(csvItemProcessor())
         .writer(csvItemWriter())
