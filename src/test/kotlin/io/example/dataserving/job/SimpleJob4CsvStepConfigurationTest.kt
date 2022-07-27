@@ -29,12 +29,6 @@ internal class SimpleJob4CsvStepConfigurationTest constructor(
     private val jobLauncherTestUtils: JobLauncherTestUtils
 ) {
 
-    // @Autowired
-    // private lateinit var jobLauncherTestUtils: JobLauncherTestUtils
-
-    // @Autowired
-    // private lateinit var jobRepositoryTestUtils: JobRepositoryTestUtils
-
     @AfterEach
     fun cleanUp() {
         // jobRepositoryTestUtils.removeJobExecutions()
