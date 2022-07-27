@@ -40,7 +40,7 @@ internal class SimpleJob4CsvStepConfigurationTest {
         val jobInstance = jobExecution.jobInstance
         val exitStatus = jobExecution.exitStatus
 
-        //then
+        // then
         Assertions.assertEquals(BatchStatus.COMPLETED, jobInstance)
         Assertions.assertEquals(ExitStatus.COMPLETED, exitStatus)
     }

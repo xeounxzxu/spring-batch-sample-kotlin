@@ -25,5 +25,4 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
         "io.example.dataserving.domain"
     ]
 )
-class TestBatchLegacyConfiguration {
-}
+class TestBatchLegacyConfiguration
