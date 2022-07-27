@@ -5,6 +5,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.batch.core.JobParameters
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.test.JobLauncherTestUtils
 import org.springframework.batch.test.context.SpringBatchTest
 import org.springframework.beans.factory.annotation.Autowired
@@ -25,13 +26,16 @@ import org.springframework.test.context.support.DirtiesContextTestExecutionListe
 )
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 internal class SimpleJob4CsvStepConfigurationTest constructor(
-    @Autowired
-    private val jobLauncherTestUtils: JobLauncherTestUtils
 ) {
+
+    @Autowired
+    private lateinit var jobBuilderFactory: JobBuilderFactory
+
+    @Autowired
+    private lateinit var jobLauncherTestUtils: JobLauncherTestUtils
 
     @AfterEach
     fun cleanUp() {
-        // jobRepositoryTestUtils.removeJobExecutions()
     }
 
     private fun defaultJobParameters(): JobParameters {
