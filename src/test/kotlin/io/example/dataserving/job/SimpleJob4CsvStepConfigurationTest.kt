@@ -1,6 +1,6 @@
 package io.example.dataserving.job
 
-import io.example.dataserving.config.TestBatchLegacyConfiguration
+import io.example.dataserving.config.TestBatchConfiguration
 import io.example.dataserving.utils.JobParametersUtil
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions
@@ -15,7 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest
 @SpringBatchTest
 @SpringBootTest(
     classes = [
-        TestBatchLegacyConfiguration::class,
+        TestBatchConfiguration::class,
         SimpleJob4CsvStepConfiguration::class
     ]
 )

@@ -29,7 +29,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
         "io.example.dataserving.domain"
     ]
 )
-class TestBatchLegacyConfiguration {
+class TestBatchConfiguration {
 
     @Bean
     fun mockJobParameters(): JobParametersUtil = JobParametersUtil()
