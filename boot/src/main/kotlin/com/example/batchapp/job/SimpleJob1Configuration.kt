@@ -30,7 +30,9 @@ open class SimpleJob1Configuration constructor(
 
     @Bean
     open fun simpleStep1(jobRepository: JobRepository): TaskletStep =
-        StepBuilder("simpleStep1", jobRepository).tasklet(simpleJob1Task1(), transactionManager).build()
+        StepBuilder("simpleStep1", jobRepository)
+            .tasklet(simpleJob1Task1(), transactionManager)
+            .build()
 
     @Bean
     open fun simpleJob1Task1() = SimpleJob1Task1(logUtil)

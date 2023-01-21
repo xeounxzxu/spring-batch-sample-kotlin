@@ -1,4 +1,9 @@
 spring:
+
+  h2:
+    console:
+      enabled: true
+
   jpa:
     defer-datasource-initialization: true
     hibernate:
@@ -7,35 +12,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
-  batch:
-    job:
-      enabled: true
-    jdbc:
-      initialize-schema: always
-
-logging:
-  level:
-    org:
-      springframework.batch.item.database: debug
-      hibernate.type.descriptor.sql.BasicBinder: TRACE
-    web: trace
-
-
----
-
-spring:
-  config:
-    activate:
-      on-profile: local
-  sql:
-    init:
-      mode: always
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
   datasource:
     driver-class-name: org.h2.Driver
     hikari:
@@ -44,26 +20,24 @@ spring:
       username: sa
       password:
       auto-commit: false
-      maximum-pool-size: 10
-  batch:
-    job:
-      enabled: false
 
----
-
-spring:
-  config:
-    activate:
-      on-profile: mysql
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL57Dialect
-  datasource:
-    driver-class-name: org.h2.Driver
-    hikari:
-      jdbc-url: jdbc:mysql://localhost:3306/testonly
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      username: root
-      password: 12345
   batch:
     job:
       enabled: true
+#    jdbc:
+#      initialize-schema: embedded
+
+logging:
+  level:
+    org:
+      springframework.batch.item.database: debug
+      hibernate.type.descriptor.sql.BasicBinder: TRACE
+    web: trace
+
+main2:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306/default
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: default
+      password: 1234
