@@ -4,37 +4,33 @@ import com.example.batchapp.job.listener.SimpleJob1Listener
 import com.example.batchapp.job.listener.SimpleJob1OtherListener
 import com.example.batchapp.job.tasklet.SimpleJob1Task1
 import com.example.batchapp.utils.LogUtil
-import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
-import org.springframework.batch.core.configuration.annotation.StepBuilderFactory
+import org.springframework.batch.core.job.builder.JobBuilder
 import org.springframework.batch.core.launch.support.RunIdIncrementer
+import org.springframework.batch.core.repository.JobRepository
+import org.springframework.batch.core.step.builder.StepBuilder
+import org.springframework.batch.core.step.tasklet.TaskletStep
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.transaction.PlatformTransactionManager
 
 @Configuration
 open class SimpleJob1Configuration constructor(
-    private val jobBuilderFactory: JobBuilderFactory,
-    private val stepBuilderFactory: StepBuilderFactory,
-    private val logUtil: LogUtil
+    private val logUtil: LogUtil,
+    private val transactionManager: PlatformTransactionManager
 ) {
 
     @Bean
-    open fun simpleJob1() =
-        //  simpleJob 이라는 Batch Job 을 생성
-        jobBuilderFactory.get("simpleJob1")
+    open fun simpleJob1(jobRepository: JobRepository) =
+        JobBuilder("simpleJob1", jobRepository)
             .listener(simpleJob1Listener())
             .listener(simpleJob1OtherListener())
             .incrementer(RunIdIncrementer())
-            .start(simpleStep1())
+            .start(simpleStep1(jobRepository))
             .build()
 
     @Bean
-    open fun simpleStep1() =
-        // simpleStep1 이라는 Batch Step 생성
-        stepBuilderFactory.get("simpleStep1")
-            // Step 안에 수행 될 기능을 명시
-            // tasklet 단일로 수행될 커스트텀한 기능들을 선언할 때 사용
-            .tasklet(simpleJob1Task1())
-            .build()
+    open fun simpleStep1(jobRepository: JobRepository): TaskletStep =
+        StepBuilder("simpleStep1", jobRepository).tasklet(simpleJob1Task1(), transactionManager).build()
 
     @Bean
     open fun simpleJob1Task1() = SimpleJob1Task1(logUtil)
