@@ -4,6 +4,7 @@ import com.example.batchapp.job.listener.SimpleJob1Listener
 import com.example.batchapp.job.listener.SimpleJob1OtherListener
 import com.example.batchapp.job.tasklet.SimpleJob1Task1
 import com.example.batchapp.utils.LogUtil
+import org.springframework.batch.core.configuration.support.DefaultBatchConfiguration
 import org.springframework.batch.core.job.builder.JobBuilder
 import org.springframework.batch.core.launch.support.RunIdIncrementer
 import org.springframework.batch.core.repository.JobRepository
@@ -17,7 +18,7 @@ import org.springframework.transaction.PlatformTransactionManager
 open class SimpleJob1Configuration constructor(
     private val logUtil: LogUtil,
     private val transactionManager: PlatformTransactionManager
-) {
+) : DefaultBatchConfiguration() {
 
     @Bean
     open fun simpleJob1(jobRepository: JobRepository) =
