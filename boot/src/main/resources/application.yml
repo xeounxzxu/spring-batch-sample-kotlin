@@ -24,8 +24,8 @@ spring:
   batch:
     job:
       enabled: true
-#    jdbc:
-#      initialize-schema: embedded
+    jdbc:
+      initialize-schema: always
 
 logging:
   level:
@@ -34,10 +34,10 @@ logging:
       hibernate.type.descriptor.sql.BasicBinder: TRACE
     web: trace
 
-main2:
-  datasource:
-    hikari:
-      jdbc-url: jdbc:mysql://localhost:3306/default
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      username: default
-      password: 1234
+#main2:
+#  datasource:
+#    hikari:
+#      jdbc-url: jdbc:mysql://localhost:3306/default
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      username: default
+#      password: 1234
