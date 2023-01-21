@@ -15,22 +15,13 @@ open class DataSourceConfiguration constructor(
 ) {
 
     @Bean("dataSource")
-    @Profile("!mysql")
     @ConfigurationProperties("spring.datasource.hikari")
     @Throws(SQLException::class)
-    open fun dataSourceH2(): HikariDataSource? {
+    open fun mainDataSource(): HikariDataSource? {
         logUtil.getLogger().info("Started H2 DataBase ==============")
 
-        Server.createTcpServer("-tcp", "-tcpAllowOthers", "-ifNotExists", "-tcpPort", 9095.toString() + "")
-            .start()
+        Server.createTcpServer("-tcp", "-tcpAllowOthers", "-ifNotExists", "-tcpPort", 9095.toString() + "").start()
 
-        return HikariDataSource()
-    }
-
-    @Bean
-    @Profile("mysql")
-    @ConfigurationProperties("spring.datasource.hikari")
-    open fun dataSource(): HikariDataSource {
         return HikariDataSource()
     }
 }
