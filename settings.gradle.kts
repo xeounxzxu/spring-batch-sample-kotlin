@@ -2,5 +2,8 @@ rootProject.name = "kotlin-batch"
 
 
 include(
-    "boot"
+    "boot",
+    "cloud",
+    "data",
+    "core"
 )

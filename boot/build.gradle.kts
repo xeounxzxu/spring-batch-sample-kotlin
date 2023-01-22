@@ -1,4 +1,3 @@
-
 plugins {
     id("org.springframework.boot")
 }
@@ -12,4 +11,7 @@ tasks.bootJar {
 }
 
 dependencies {
+    implementation(project(":cloud"))
+    implementation(project(":data"))
+    implementation(project(":core"))
 }
