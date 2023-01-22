@@ -1,6 +1,6 @@
 package com.example.batchapp.job.tasklet
 
-import com.example.batchapp.utils.LoggerUtil
+import com.example.batchapp.utils.LoggerUtil.getLogger
 import org.springframework.batch.core.ExitStatus
 import org.springframework.batch.core.StepContribution
 import org.springframework.batch.core.StepExecution
@@ -8,11 +8,10 @@ import org.springframework.batch.core.StepExecutionListener
 import org.springframework.batch.core.scope.context.ChunkContext
 import org.springframework.batch.core.step.tasklet.Tasklet
 import org.springframework.batch.repeat.RepeatStatus
-import kotlin.math.log
 
-class SimpleJob1Task1 constructor(
-    private val logger: LoggerUtil
-) : Tasklet, StepExecutionListener {
+class SimpleJob1Task1 : Tasklet, StepExecutionListener {
+
+    private val logger = getLogger(this::class.java)
 
     override fun execute(contribution: StepContribution, chunkContext: ChunkContext): RepeatStatus? {
         logger.info("===> simpleStep1")

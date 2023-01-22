@@ -14,7 +14,6 @@ import org.springframework.transaction.PlatformTransactionManager
 
 @Configuration
 open class RunningJob1Configuraiton constructor(
-    private val loggerUtil: LoggerUtil,
     @Qualifier("batchTransactionManager")
     private val transactionManager: PlatformTransactionManager
 ) {
@@ -31,6 +30,6 @@ open class RunningJob1Configuraiton constructor(
         .build()
 
     @Bean
-    open fun simpleJob1Task1() = SimpleJob1Task1(loggerUtil)
+    open fun simpleJob1Task1() = SimpleJob1Task1()
 
 }

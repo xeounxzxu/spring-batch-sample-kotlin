@@ -1,6 +1,7 @@
 package com.example.batchapp.config
 
 import com.example.batchapp.utils.LoggerUtil
+import com.example.batchapp.utils.LoggerUtil.getLogger
 import com.zaxxer.hikari.HikariDataSource
 import org.h2.tools.Server
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing
@@ -21,8 +22,9 @@ import javax.sql.DataSource
     dataSourceRef = "batchDataSource", transactionManagerRef = "batchTransactionManager"
 )
 open class BatchDataSourceConfiguration constructor(
-    private val logger: LoggerUtil
 ) {
+
+    private val logger = getLogger(this::class.java)
 
     @Bean("batchDataSource")
     @ConfigurationProperties("spring.datasource.hikari")

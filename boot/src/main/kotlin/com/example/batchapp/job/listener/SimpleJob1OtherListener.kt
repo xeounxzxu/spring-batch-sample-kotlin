@@ -1,13 +1,13 @@
 package com.example.batchapp.job.listener
 
-import com.example.batchapp.utils.LoggerUtil
+import com.example.batchapp.utils.LoggerUtil.getLogger
 import org.springframework.batch.core.JobExecution
 import org.springframework.batch.core.annotation.AfterJob
 import org.springframework.batch.core.annotation.BeforeJob
 
-class SimpleJob1OtherListener constructor(
-    private val logger: LoggerUtil
-) {
+class SimpleJob1OtherListener {
+
+    private val logger = getLogger(this::class.java)
 
     @BeforeJob
     fun before(jobExecution: JobExecution) {
