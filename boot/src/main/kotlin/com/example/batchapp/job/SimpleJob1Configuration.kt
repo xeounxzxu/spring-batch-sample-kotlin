@@ -1,7 +1,7 @@
 package com.example.batchapp.job
 
 import com.example.batchapp.job.tasklet.SimpleJob1Task1
-import com.example.batchapp.utils.LogUtil
+import com.example.batchapp.utils.LoggerUtil
 import org.springframework.batch.core.job.builder.JobBuilder
 import org.springframework.batch.core.repository.JobRepository
 import org.springframework.batch.core.step.builder.StepBuilder
@@ -11,7 +11,7 @@ import org.springframework.transaction.PlatformTransactionManager
 
 @Configuration
 open class SimpleJob1Configuration constructor(
-    private val logUtil: LogUtil,
+    private val loggerUtil: LoggerUtil,
     private val transactionManager: PlatformTransactionManager
 ) {
 
@@ -28,6 +28,6 @@ open class SimpleJob1Configuration constructor(
         .build()
 
     @Bean
-    open fun simpleJob1Task1() = SimpleJob1Task1(logUtil)
+    open fun simpleJob1Task1() = SimpleJob1Task1(loggerUtil)
 
 }

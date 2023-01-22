@@ -1,18 +1,18 @@
 package com.example.batchapp.job.listener
 
-import com.example.batchapp.utils.LogUtil
+import com.example.batchapp.utils.LoggerUtil
 import org.springframework.batch.core.JobExecution
 import org.springframework.batch.core.JobExecutionListener
 
 open class SimpleJob1Listener constructor(
-    private val logUtil: LogUtil
+    private val logger: LoggerUtil
 ) : JobExecutionListener {
 
     override fun beforeJob(jobExecution: JobExecution) {
-        logUtil.getLogger().info(" ========= simple job before Job")
+        logger.info(" ========= simple job before Job")
     }
 
     override fun afterJob(jobExecution: JobExecution) {
-        logUtil.getLogger().info(" ========= simple job after Job")
+        logger.info(" ========= simple job after Job")
     }
 }
