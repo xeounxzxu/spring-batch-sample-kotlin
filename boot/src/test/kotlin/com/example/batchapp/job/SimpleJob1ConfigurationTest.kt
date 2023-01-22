@@ -14,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest
 @SpringBootTest(
     classes = [
         TestBatchConfiguration::class,
-        SimpleJob1Configuration::class
+        RunningJob1Configuraiton::class
     ]
 )
 @SpringBatchTest
