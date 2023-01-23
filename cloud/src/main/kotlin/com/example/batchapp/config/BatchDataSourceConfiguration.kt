@@ -1,6 +1,5 @@
 package com.example.batchapp.config
 
-import com.example.batchapp.utils.LoggerUtil
 import com.example.batchapp.utils.LoggerUtil.getLogger
 import com.zaxxer.hikari.HikariDataSource
 import org.h2.tools.Server
