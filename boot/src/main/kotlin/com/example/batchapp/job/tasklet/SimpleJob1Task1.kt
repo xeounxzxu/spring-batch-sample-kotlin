@@ -13,10 +13,11 @@ class SimpleJob1Task1 : Tasklet, StepExecutionListener {
 
     private val logger = getLogger(this::class.java)
 
-    override fun execute(contribution: StepContribution, chunkContext: ChunkContext): RepeatStatus? {
-        logger.info("===> simpleStep1")
-        return RepeatStatus.FINISHED
-    }
+    override fun execute(contribution: StepContribution, chunkContext: ChunkContext): RepeatStatus =
+        RepeatStatus.FINISHED.run {
+            logger.info("Running1 Execute By Tasklet")
+            this
+        }
 
     /**
      * Step 이 시작 전 포인트
@@ -28,8 +29,8 @@ class SimpleJob1Task1 : Tasklet, StepExecutionListener {
     /**
      * Step 이 시작 후 포인트
      */
-    override fun afterStep(stepExecution: StepExecution): ExitStatus? {
-        logger.info("after point")
-        return ExitStatus.COMPLETED
+    override fun afterStep(stepExecution: StepExecution): ExitStatus = ExitStatus.COMPLETED.run {
+        logger.info("this is After Step")
+        this
     }
 }
