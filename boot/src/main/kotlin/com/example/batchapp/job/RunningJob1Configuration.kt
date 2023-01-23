@@ -2,6 +2,7 @@ package com.example.batchapp.job
 
 import com.example.batchapp.job.tasklet.SimpleJob1Task1
 import org.springframework.batch.core.Job
+import org.springframework.batch.core.configuration.support.DefaultBatchConfiguration
 import org.springframework.batch.core.job.builder.JobBuilder
 import org.springframework.batch.core.repository.JobRepository
 import org.springframework.batch.core.step.builder.StepBuilder
@@ -15,7 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager
 @Configuration
 open class RunningJob1Configuration constructor(
     @Qualifier("batchTransactionManager") private val transactionManager: PlatformTransactionManager
-) {
+) : DefaultBatchConfiguration() {
 
     @Bean
     open fun runningJob(jobRepository: JobRepository, @Qualifier("runningStep1") step: TaskletStep): Job =
