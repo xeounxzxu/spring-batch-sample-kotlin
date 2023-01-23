@@ -1,36 +1,28 @@
-package com.example.batchapp.config
-
 import com.example.batchapp.utils.JobParametersUtil
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration
-import org.springframework.boot.autoconfigure.domain.EntityScan
+import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.ComponentScan
-import org.springframework.context.annotation.Configuration
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType
+import org.springframework.jdbc.support.JdbcTransactionManager
+import javax.sql.DataSource
 
-@Configuration
-@EnableAutoConfiguration
-@EnableBatchProcessing
-@EnableJpaRepositories(
-    basePackages = [
-        "com.example.batchapp.repository"
-    ]
+
+@TestConfiguration
+@EnableBatchProcessing(
+    dataSourceRef = "batchDataSource", transactionManagerRef = "batchTransactionManager"
 )
-@ComponentScan(
-    basePackages = [
-        "com.example.batchapp.repository",
-        "com.example.batchapp.utils",
-        "com.example.batchapp.job.incrementer",
-    ]
-)
-@EntityScan(
-    basePackages = [
-        "com.example.batchapp.domain"
-    ]
-)
-class TestBatchConfiguration {
+open class TestBatchConfiguration {
 
     @Bean
-    fun mockJobParameters(): JobParametersUtil = JobParametersUtil()
+    open fun jobParametersUtil(): JobParametersUtil = JobParametersUtil()
+
+    @Bean("batchDataSource")
+    open fun batchDataSource(): DataSource = EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
+        .addScript("/org/springframework/batch/core/schema-h2.sql").generateUniqueName(true).build()
+
+    @Bean
+    open fun batchTransactionManager(@Qualifier("batchDataSource") dataSource: DataSource): JdbcTransactionManager =
+        JdbcTransactionManager(dataSource)
 }
