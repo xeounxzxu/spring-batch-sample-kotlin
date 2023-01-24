@@ -2,7 +2,6 @@ package com.example.batchapp.job
 
 import TestBatchConfiguration
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.springframework.batch.core.ExitStatus
 import org.springframework.batch.core.Job
@@ -16,7 +15,6 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
 @SpringJUnitConfig(
     classes = [TestBatchConfiguration::class, RunningJob1Configuration::class]
 )
-@DisplayName("RunningJob1 에서")
 class RunningJob1ConfigurationTest {
 
     @Autowired
