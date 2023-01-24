@@ -15,28 +15,29 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("batch")
 class JobLauncherController constructor(
     private val jobLauncher: JobLauncher,
-    @Qualifier("runningJob")
-    private val job: Job,
+    @Qualifier("runningJob") private val job: Job,
+    @Qualifier("runningJob2") private val job2: Job,
     private val dateIncrementer: DateIncrementer
 ) {
 
     @GetMapping("running1")
-    fun runningStartBatchJob(): String {
+    fun runningStartBatchJob(): Map<String, Any> {
 
         val jobParameters = dateIncrementer.getNext(null)
 
         jobLauncher.run(job, jobParameters)
 
-        return "OK"
+        return mapOf(
+            "status" to HttpStatus.OK.value(), "data" to HttpStatus.OK.name
+        )
     }
 
-    @Deprecated("아직 사용 불가 Job")
     @PostMapping("csv")
     fun runCsvJob(): MsgDTO {
 
         val jobParameters = dateIncrementer.getNext(null)
 
-        jobLauncher.run(job, jobParameters)
+        jobLauncher.run(job2, jobParameters)
 
         return MsgDTO(HttpStatus.OK.value(), "SUCCESS")
     }
