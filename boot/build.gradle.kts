@@ -11,7 +11,12 @@ tasks.bootJar {
 }
 
 dependencies {
+
     implementation(project(":cloud"))
     implementation(project(":data"))
     implementation(project(":core"))
+    testImplementation(project(":cloud"))
+    testImplementation(project(":data"))
+    testImplementation(project(":core"))
+
 }

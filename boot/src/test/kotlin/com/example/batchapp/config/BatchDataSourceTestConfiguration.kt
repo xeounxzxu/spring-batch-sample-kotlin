@@ -13,7 +13,7 @@ import javax.sql.DataSource
 @EnableBatchProcessing(
     dataSourceRef = "batchDataSource", transactionManagerRef = "batchTransactionManager"
 )
-open class TestBatchConfiguration {
+open class BatchDataSourceTestConfiguration {
 
     @Bean
     open fun jobParametersUtil(): JobParametersUtil = JobParametersUtil()
