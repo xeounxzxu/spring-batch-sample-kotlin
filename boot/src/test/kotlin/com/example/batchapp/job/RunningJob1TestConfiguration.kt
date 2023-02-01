@@ -10,7 +10,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
 @SpringJUnitConfig(
     classes = [RunningJob1Configuration::class]
 )
-class RunningJob1ConfigurationTest : AbstractJobConfigurationTest() {
+class RunningJob1TestConfiguration : AbstractBaseJobTestConfiguration() {
 
 
     @Test
