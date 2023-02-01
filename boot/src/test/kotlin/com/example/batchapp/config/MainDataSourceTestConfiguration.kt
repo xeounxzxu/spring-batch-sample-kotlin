@@ -46,7 +46,6 @@ open class MainDataSourceTestConfiguration {
     }
 
     @Bean("mainDataSource")
-//    @ConfigurationProperties(prefix = "main2.datasource.hikari")
     open fun mainDataSource(): DataSource = EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
             .generateUniqueName(true).build()
 
