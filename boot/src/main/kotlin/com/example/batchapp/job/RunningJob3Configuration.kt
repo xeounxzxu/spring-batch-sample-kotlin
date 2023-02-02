@@ -21,10 +21,10 @@ open class RunningJob3Configuration(
     private val logger = LoggerFactory.getLogger(this::class.java)
 
     @Bean
-    open fun itemReader(): ListItemReader<String> = ListItemReader(listOf("foo", "bar", "baz"))
+    open fun itemReaderByJob3(): ListItemReader<String> = ListItemReader(listOf("foo", "bar", "baz"))
 
     @Bean
-    open fun itemWriter(): ItemWriter<String> = ItemWriter { s ->
+    open fun itemWriterByJob3(): ItemWriter<String> = ItemWriter { s ->
         logger.info(s.toString())
     }
 
@@ -32,12 +32,12 @@ open class RunningJob3Configuration(
     open fun running3Step1(jobRepository: JobRepository): TaskletStep =
         StepBuilder("", jobRepository)
             .chunk<String, String>(10, transactionManager)
-            .reader(itemReader())
-            .writer(itemWriter())
+            .reader(itemReaderByJob3())
+            .writer(itemWriterByJob3())
             .build()
 
     @Bean
-    open fun running3Job(jobRepository: JobRepository) = JobBuilder("", jobRepository)
+    open fun running3Job(jobRepository: JobRepository) = JobBuilder("running3Job", jobRepository)
         .start(running3Step1(jobRepository))
         .build()
 }
