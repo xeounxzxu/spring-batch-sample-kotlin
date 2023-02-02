@@ -9,12 +9,12 @@ import jakarta.persistence.Id
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private var id: Long? = null,
-    private var point: Double? = null,
-    private var email: String? = null,
-    private var gender: String? = null,
-    private var firstName: String? = null,
-    private var lastName: String? = null
+    var id: Long? = null,
+    var point: Double? = null,
+    var email: String? = null,
+    var gender: String? = null,
+    var firstName: String? = null,
+    var lastName: String? = null
 ) : BaseEntity() {
     constructor(
         point: Double?,
