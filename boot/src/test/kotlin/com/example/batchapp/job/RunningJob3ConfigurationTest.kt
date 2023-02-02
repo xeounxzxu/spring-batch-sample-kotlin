@@ -18,6 +18,14 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
 class RunningJob3ConfigurationTest : AbstractJobTestConfiguration() {
 
     @Test
+    fun `Step 테스트`() {
+
+        val exec = jobLauncherTestUtils.launchStep("running3Step1")
+
+        assertEquals(BatchStatus.COMPLETED, exec.status)
+    }
+
+    @Test
     fun `Running 잡 성공 테스트 케이스`(@Qualifier("running3Job") job: Job) {
 
         jobLauncherTestUtils.job = job
