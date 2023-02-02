@@ -30,7 +30,7 @@ open class RunningJob3Configuration(
 
     @Bean
     open fun running3Step1(jobRepository: JobRepository): TaskletStep =
-        StepBuilder("", jobRepository)
+        StepBuilder("running3Step1", jobRepository)
             .chunk<String, String>(10, transactionManager)
             .reader(itemReaderByJob3())
             .writer(itemWriterByJob3())
