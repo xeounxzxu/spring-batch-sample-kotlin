@@ -30,13 +30,19 @@ open class RunningJob2Configuration constructor(
 
     @Bean
     open fun runningJob2(jobRepository: JobRepository): Job =
-        JobBuilder("runningJob2", jobRepository).start(runningStep2(jobRepository)).build()
+        JobBuilder("runningJob2", jobRepository)
+            .start(runningStep2(jobRepository))
+            .build()
 
 
     @Bean
     open fun runningStep2(jobRepository: JobRepository): TaskletStep =
-        StepBuilder("runningStep2", jobRepository).chunk<UserDTO, User>(100, transactionManager).reader(csvItemReader())
-            .processor(csvItemProcessor()).writer(csvItemWriter()).build()
+        StepBuilder("runningStep2", jobRepository)
+            .chunk<UserDTO, User>(100, transactionManager)
+            .reader(csvItemReader())
+            .processor(csvItemProcessor())
+            .writer(csvItemWriter())
+            .build()
 
     @Bean
     open fun csvItemReader(): ItemReader<UserDTO> = FlatFileItemReader<UserDTO>().apply {
