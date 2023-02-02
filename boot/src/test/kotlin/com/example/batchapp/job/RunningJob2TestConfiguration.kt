@@ -57,6 +57,6 @@ open class `RunningJob2 에서` : AbstractJobTestConfiguration() {
 
     @AfterEach
     fun after() {
-        userRepository.deleteAll()
+        userRepository.deleteAllInBatch()
     }
 }
