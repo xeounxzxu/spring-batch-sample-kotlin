@@ -1,4 +1,4 @@
-package com.example.batchapp.job
+package com.example.batchapp.config
 
 import BatchDataSourceTestConfiguration
 import org.springframework.batch.test.JobLauncherTestUtils

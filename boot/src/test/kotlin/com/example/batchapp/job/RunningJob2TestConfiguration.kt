@@ -1,5 +1,6 @@
 package com.example.batchapp.job
 
+import com.example.batchapp.config.AbstractJobTestConfiguration
 import com.example.batchapp.config.MainDataSourceTestConfiguration
 import com.example.batchapp.repository.UserRepository
 import org.junit.jupiter.api.Assertions.*

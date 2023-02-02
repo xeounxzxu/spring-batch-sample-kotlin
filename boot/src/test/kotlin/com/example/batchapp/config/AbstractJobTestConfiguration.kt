@@ -1,4 +1,4 @@
-package com.example.batchapp.job
+package com.example.batchapp.config
 
 import org.junit.jupiter.api.BeforeEach
 import org.springframework.beans.factory.annotation.Autowired
