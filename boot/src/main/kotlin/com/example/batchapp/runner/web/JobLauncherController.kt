@@ -1,7 +1,7 @@
-package com.example.batchapp.web
+package com.example.batchapp.runner.web
 
 import com.example.batchapp.job.dto.MsgDTO
-import com.example.batchapp.job.incrementer.DateIncrementer
+import com.example.batchapp.core.incrementer.DateIncrementer
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.launch.JobLauncher
 import org.springframework.beans.factory.annotation.Qualifier

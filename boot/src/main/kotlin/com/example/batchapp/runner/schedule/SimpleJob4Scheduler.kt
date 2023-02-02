@@ -1,4 +1,4 @@
-package com.example.batchapp.job.scheduler
+package com.example.batchapp.runner.schedule
 
 //import com.example.batchapp.job.incrementer.DateIncrementer
 //import com.example.batchapp.utils.LogUtil

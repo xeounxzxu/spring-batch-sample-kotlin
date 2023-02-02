@@ -1,4 +1,4 @@
-package com.example.batchapp.job.dto
+package com.example.batchapp.runner.dto
 
 import com.example.batchapp.domain.User
 

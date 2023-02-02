@@ -1,4 +1,4 @@
-package com.example.batchapp.job.listener
+package com.example.batchapp.core.listener
 
 import com.example.batchapp.utils.LoggerUtil.getLogger
 import org.springframework.batch.core.JobExecution

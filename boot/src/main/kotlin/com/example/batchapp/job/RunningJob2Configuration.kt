@@ -1,7 +1,7 @@
 package com.example.batchapp.job
 
 import com.example.batchapp.domain.User
-import com.example.batchapp.job.dto.UserDTO
+import com.example.batchapp.runner.dto.UserDTO
 import com.example.batchapp.repository.UserRepository
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.job.builder.JobBuilder
@@ -38,7 +38,7 @@ open class RunningJob2Configuration constructor(
     @Bean
     open fun runningStep2(jobRepository: JobRepository): TaskletStep =
         StepBuilder("runningStep2", jobRepository)
-            .chunk<UserDTO, User>(100, transactionManager)
+            .chunk<UserDTO,User>(100, transactionManager)
             .reader(csvItemReader())
             .processor(csvItemProcessor())
             .writer(csvItemWriter())
@@ -46,6 +46,7 @@ open class RunningJob2Configuration constructor(
 
     @Bean
     open fun csvItemReader(): ItemReader<UserDTO> = FlatFileItemReader<UserDTO>().apply {
+
         this.setName("userReader")
 
         this.setEncoding("UTF-8")
@@ -75,6 +76,5 @@ open class RunningJob2Configuration constructor(
     @Bean
     open fun csvItemWriter() = ItemWriter<User> {
         userRepository.saveAll(it)
-        it
     }
 }
