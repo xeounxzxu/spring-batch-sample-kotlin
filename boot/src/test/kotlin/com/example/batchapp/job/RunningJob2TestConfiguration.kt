@@ -3,9 +3,10 @@ package com.example.batchapp.job
 import com.example.batchapp.config.AbstractJobTestConfiguration
 import com.example.batchapp.config.MainDataSourceTestConfiguration
 import com.example.batchapp.repository.UserRepository
+import org.hibernate.engine.jdbc.batch.spi.Batch
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import org.springframework.batch.core.ExitStatus
+import org.springframework.batch.core.BatchStatus
 import org.springframework.batch.core.Job
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
@@ -22,9 +23,15 @@ open class `RunningJob2 에서` : AbstractJobTestConfiguration() {
 
         jobLauncherTestUtils.job = job
 
-        val status = jobLauncherTestUtils.launchJob()
+        val exec = jobLauncherTestUtils.launchJob()
 
-        assertEquals(ExitStatus.COMPLETED.exitCode, status.exitStatus.exitCode)
+        assertEquals(BatchStatus.COMPLETED, exec.status)
+
+        val stepExec = exec.stepExecutions.iterator().next()
+
+        assertEquals(BatchStatus.COMPLETED, stepExec.status)
+        assertEquals(1001, stepExec.readCount)
+        assertEquals(1001, stepExec.writeCount)
 
         val cnt = userRepository.count()
 
