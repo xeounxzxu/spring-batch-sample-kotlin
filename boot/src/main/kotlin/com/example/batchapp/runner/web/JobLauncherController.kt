@@ -17,6 +17,7 @@ class JobLauncherController constructor(
     private val jobLauncher: JobLauncher,
     @Qualifier("runningJob") private val job: Job,
     @Qualifier("runningJob2") private val job2: Job,
+    @Qualifier("runningJob4") private val job4: Job,
     private val dateIncrementer: DateIncrementer
 ) {
 
@@ -41,4 +42,15 @@ class JobLauncherController constructor(
 
         return MsgDTO(HttpStatus.OK.value(), "SUCCESS")
     }
+
+    @PostMapping("csv2")
+    fun runJob4(): MsgDTO {
+
+        val jobParameters = dateIncrementer.getNext(null)
+
+        jobLauncher.run(job4, jobParameters)
+
+        return MsgDTO(HttpStatus.OK.value(), "SUCCESS")
+    }
+
 }
