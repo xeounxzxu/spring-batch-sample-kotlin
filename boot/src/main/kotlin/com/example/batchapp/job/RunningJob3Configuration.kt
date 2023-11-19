@@ -14,7 +14,7 @@ import org.springframework.transaction.PlatformTransactionManager
 
 @Configuration
 open class RunningJob3Configuration(
-    @Qualifier("mainTransactionManager")
+    @Qualifier("mysqlTransactionManager")
     private val transactionManager: PlatformTransactionManager
 ) {
 

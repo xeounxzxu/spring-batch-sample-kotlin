@@ -22,13 +22,13 @@ import javax.sql.DataSource
 @EnableJpaAuditing
 @EnableJpaRepositories(
     basePackages = ["com.example.batchapp.mysql.repository"],
-    entityManagerFactoryRef = "mainEntityManager",
-    transactionManagerRef = "mainTransactionManager"
+    entityManagerFactoryRef = "mysqlEntityManager",
+    transactionManagerRef = "mysqlTransactionManager"
 )
 @EntityScan(
     basePackages = ["com.example.batchapp.mysql.domain"]
 )
-open class MainDataSourceConfiguration {
+open class MysqlDataSourceConfiguration {
 
     private fun getJpaProperties(): Properties {
         return object : Properties() {
@@ -41,13 +41,13 @@ open class MainDataSourceConfiguration {
         }
     }
 
-    @Bean("mainDataSource")
+    @Bean("mysqlDataSource")
     @ConfigurationProperties(prefix = "main2.datasource.hikari")
-    open fun mainDataSource(): DataSource = DataSourceBuilder.create().build()
+    open fun mysqlDataSource(): DataSource = DataSourceBuilder.create().build()
 
-    @Bean("mainEntityManager")
-    open fun mainEntityManager(
-        @Qualifier("mainDataSource") dataSource: DataSource, jpaVendorAdapter: JpaVendorAdapter
+    @Bean("mysqlEntityManager")
+    open fun mysqlEntityManager(
+        @Qualifier("mysqlDataSource") dataSource: DataSource, jpaVendorAdapter: JpaVendorAdapter
     ): LocalContainerEntityManagerFactoryBean {
 
         val em = LocalContainerEntityManagerFactoryBean()
@@ -74,8 +74,8 @@ open class MainDataSourceConfiguration {
         return hibernateJpaVendorAdapter
     }
 
-    @Bean
-    open fun mainTransactionManager(
+    @Bean("mysqlTransactionManager")
+    open fun mysqlTransactionManager(
         mainEntityManager: LocalContainerEntityManagerFactoryBean
     ): PlatformTransactionManager = JpaTransactionManager().apply {
         this.entityManagerFactory = mainEntityManager.getObject()

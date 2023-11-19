@@ -25,7 +25,7 @@ import org.springframework.transaction.PlatformTransactionManager
 @Configuration
 open class RunningJob2Configuration constructor(
     private val userRepository: UserRepository,
-    @Qualifier("mainTransactionManager") private val transactionManager: PlatformTransactionManager
+    @Qualifier("mysqlTransactionManager") private val transactionManager: PlatformTransactionManager
 ) {
 
     @Bean

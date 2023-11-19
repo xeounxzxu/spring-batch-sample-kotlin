@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import javax.sql.DataSource
 
-@Transactional(value = "mainTransactionManager", propagation = Propagation.NOT_SUPPORTED)
+@Transactional(value = "mysqlTransactionManager", propagation = Propagation.NOT_SUPPORTED)
 abstract class AbstractJobTestConfiguration : AbstractBaseJobTestConfiguration() {
 
     @Autowired

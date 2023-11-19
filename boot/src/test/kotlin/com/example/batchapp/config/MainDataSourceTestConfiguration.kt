@@ -24,9 +24,9 @@ import javax.sql.DataSource
 @TestConfiguration
 @EnableJpaAuditing
 @EnableJpaRepositories(
-    basePackages = ["com.example.batchapp.repository"],
-    entityManagerFactoryRef = "mainEntityManager",
-    transactionManagerRef = "mainTransactionManager"
+    basePackages = ["com.example.batchapp.mysql.repository"],
+    entityManagerFactoryRef = "mysqlEntityManager",
+    transactionManagerRef = "mysqlTransactionManager"
 )
 @EntityScan(
     basePackages = ["com.example.batchapp.domain"]
@@ -79,7 +79,7 @@ open class MainDataSourceTestConfiguration {
     }
 
     @Bean
-    open fun mainTransactionManager(
+    open fun mysqlTransactionManager(
         mainEntityManager: LocalContainerEntityManagerFactoryBean
     ): PlatformTransactionManager = JpaTransactionManager().apply {
         this.entityManagerFactory = mainEntityManager.getObject()

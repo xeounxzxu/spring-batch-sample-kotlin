@@ -24,9 +24,9 @@ import org.springframework.transaction.PlatformTransactionManager
 
 @Configuration
 open class RunningJob4Configuration constructor(
-    @Qualifier("mainEntityManager")
+    @Qualifier("mysqlEntityManager")
     private val entityManagerFactory: LocalContainerEntityManagerFactoryBean,
-    @Qualifier("mainTransactionManager")
+    @Qualifier("mysqlTransactionManager")
     private val transactionManager: PlatformTransactionManager
 ) {
 
