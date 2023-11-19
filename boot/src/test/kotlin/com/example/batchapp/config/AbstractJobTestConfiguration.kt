@@ -13,7 +13,7 @@ import javax.sql.DataSource
 abstract class AbstractJobTestConfiguration : AbstractBaseJobTestConfiguration() {
 
     @Autowired
-    @Qualifier("mainDataSource")
+    @Qualifier("mysqlDataSource")
     private lateinit var dataSource: DataSource
 
     private lateinit var jdbcTemplate: JdbcOperations
