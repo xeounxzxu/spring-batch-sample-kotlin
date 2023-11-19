@@ -1,6 +1,7 @@
 package com.example.batchapp.runner.dto
 
-import com.example.batchapp.domain.User
+import com.example.batchapp.mysql.domain.User
+
 
 data class UserDTO(
     private var id: Long? = null,

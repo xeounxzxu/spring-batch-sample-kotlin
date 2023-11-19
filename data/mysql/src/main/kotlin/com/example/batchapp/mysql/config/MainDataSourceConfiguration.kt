@@ -1,4 +1,4 @@
-package com.example.batchapp.config
+package com.example.batchapp.mysql.config
 
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.autoconfigure.domain.EntityScan
@@ -21,12 +21,12 @@ import javax.sql.DataSource
 @Configuration
 @EnableJpaAuditing
 @EnableJpaRepositories(
-    basePackages = ["com.example.batchapp.repository"],
+    basePackages = ["com.example.batchapp.mysql.repository"],
     entityManagerFactoryRef = "mainEntityManager",
     transactionManagerRef = "mainTransactionManager"
 )
 @EntityScan(
-    basePackages = ["com.example.batchapp.domain"]
+    basePackages = ["com.example.batchapp.mysql.domain"]
 )
 open class MainDataSourceConfiguration {
 
@@ -56,7 +56,7 @@ open class MainDataSourceConfiguration {
 
         em.dataSource = dataSource
 
-        em.setPackagesToScan(*arrayOf("com.example.batchapp.domain"))
+        em.setPackagesToScan(*arrayOf("com.example.batchapp.mysql.domain"))
 
         em.jpaVendorAdapter = jpaVendorAdapter
 

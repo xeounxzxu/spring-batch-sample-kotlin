@@ -1,5 +1,6 @@
-package com.example.batchapp.domain
+package com.example.batchapp.mysql.domain
 
+import com.example.batchapp.mysql.domain.BaseEntity
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType

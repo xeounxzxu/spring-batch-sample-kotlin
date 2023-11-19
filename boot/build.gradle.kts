@@ -13,10 +13,10 @@ tasks.bootJar {
 dependencies {
 
     implementation(project(":cloud"))
-    implementation(project(":data"))
+    implementation(project(":data:mysql"))
     implementation(project(":core"))
     testImplementation(project(":cloud"))
-    testImplementation(project(":data"))
+    testImplementation(project(":data:mysql"))
     testImplementation(project(":core"))
 
 }

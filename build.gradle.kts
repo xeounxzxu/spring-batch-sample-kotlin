@@ -11,28 +11,11 @@ plugins {
 
 allprojects {
 
-    val javaVersion = "17"
     group = "com.example"
     version = "0.0.1-SNAPSHOT"
 
-    tasks.withType<JavaCompile> {
-        sourceCompatibility = javaVersion
-        targetCompatibility = javaVersion
-    }
-
     repositories {
         mavenCentral()
-    }
-
-    tasks.withType<KotlinCompile> {
-        kotlinOptions {
-            freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = javaVersion
-        }
-    }
-
-    tasks.withType<Test> {
-        useJUnitPlatform()
     }
 
 }
@@ -44,6 +27,7 @@ subprojects {
         plugin("io.spring.dependency-management")
         plugin("kotlin-kapt")
         plugin("org.jetbrains.kotlin.jvm")
+        plugin("org.springframework.boot")
     }
 
     dependencies {
@@ -61,5 +45,23 @@ subprojects {
         implementation("com.h2database:h2")
         runtimeOnly("mysql:mysql-connector-java")
 
+    }
+
+    val javaVersion = "17"
+
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
+    }
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = javaVersion
+        }
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
     }
 }

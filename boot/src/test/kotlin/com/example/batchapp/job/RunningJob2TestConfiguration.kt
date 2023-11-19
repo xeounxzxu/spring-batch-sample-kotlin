@@ -2,7 +2,7 @@ package com.example.batchapp.job
 
 import com.example.batchapp.config.AbstractJobTestConfiguration
 import com.example.batchapp.config.MainDataSourceTestConfiguration
-import com.example.batchapp.repository.UserRepository
+import com.example.batchapp.mysql.repository.UserRepository
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test

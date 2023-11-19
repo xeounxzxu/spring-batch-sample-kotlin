@@ -1,8 +1,8 @@
 package com.example.batchapp.job
 
-import com.example.batchapp.domain.User
+import com.example.batchapp.mysql.domain.User
+import com.example.batchapp.mysql.repository.UserRepository
 import com.example.batchapp.runner.dto.UserDTO
-import com.example.batchapp.repository.UserRepository
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.job.builder.JobBuilder
 import org.springframework.batch.core.repository.JobRepository
@@ -38,7 +38,7 @@ open class RunningJob2Configuration constructor(
     @Bean
     open fun runningStep2(jobRepository: JobRepository): TaskletStep =
         StepBuilder("runningStep2", jobRepository)
-            .chunk<UserDTO,User>(100, transactionManager)
+            .chunk<UserDTO, User>(100, transactionManager)
             .reader(csvItemReader())
             .processor(csvItemProcessor())
             .writer(csvItemWriter())

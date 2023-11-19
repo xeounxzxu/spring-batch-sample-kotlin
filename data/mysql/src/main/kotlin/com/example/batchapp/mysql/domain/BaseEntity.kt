@@ -1,4 +1,4 @@
-package com.example.batchapp.domain
+package com.example.batchapp.mysql.domain
 
 import jakarta.persistence.EntityListeners
 import jakarta.persistence.MappedSuperclass

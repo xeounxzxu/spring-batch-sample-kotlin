@@ -1,6 +1,6 @@
 package com.example.batchapp.job
 
-import com.example.batchapp.domain.User
+import com.example.batchapp.mysql.domain.User
 import com.example.batchapp.runner.dto.UserSmailInfoDTO
 import org.slf4j.LoggerFactory
 import org.springframework.batch.core.Job

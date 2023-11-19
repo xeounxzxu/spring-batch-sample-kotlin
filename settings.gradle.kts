@@ -5,5 +5,6 @@ include(
     "boot",
     "cloud",
     "data",
+    ":data:mysql",
     "core"
 )
