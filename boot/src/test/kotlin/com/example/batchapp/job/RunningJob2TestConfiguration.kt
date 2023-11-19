@@ -1,10 +1,10 @@
 package com.example.batchapp.job
 
 import com.example.batchapp.config.AbstractJobTestConfiguration
-import com.example.batchapp.config.MainDataSourceTestConfiguration
+import com.example.batchapp.mysql.config.MysqlDataSourceConfiguration
 import com.example.batchapp.mysql.repository.UserRepository
 import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.batch.core.BatchStatus
 import org.springframework.batch.core.Job
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
 
-@SpringJUnitConfig(classes = [RunningJob2Configuration::class, MainDataSourceTestConfiguration::class])
+@SpringJUnitConfig(classes = [RunningJob2Configuration::class, MysqlDataSourceConfiguration::class])
 open class `RunningJob2 에서` : AbstractJobTestConfiguration() {
 
     @Autowired

@@ -1,7 +1,7 @@
 package com.example.batchapp.job
 
 import com.example.batchapp.config.AbstractJobTestConfiguration
-import com.example.batchapp.config.MainDataSourceTestConfiguration
+import com.example.batchapp.mysql.config.MysqlDataSourceConfiguration
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.batch.core.BatchStatus
@@ -11,7 +11,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig
 @SpringJUnitConfig(
     classes = [
         RunningJob4Configuration::class,
-        MainDataSourceTestConfiguration::class
+        MysqlDataSourceConfiguration::class
     ]
 )
 class RunningJob4ConfigurationTest : AbstractJobTestConfiguration() {
