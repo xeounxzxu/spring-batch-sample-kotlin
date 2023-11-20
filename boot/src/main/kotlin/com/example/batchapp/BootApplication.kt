@@ -13,5 +13,6 @@ import org.springframework.scheduling.annotation.EnableScheduling
 open class BootApplication
 
 fun main(args: Array<String>) {
+    System.setProperty("spring.config.name", "application,application-mysql,application-h2")
     runApplication<BootApplication>(*args)
 }
