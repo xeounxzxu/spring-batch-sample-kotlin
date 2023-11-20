@@ -5,3 +5,7 @@ tasks.jar {
 tasks.bootJar {
     enabled = false
 }
+
+dependencies {
+    runtimeOnly("mysql:mysql-connector-java")
+}

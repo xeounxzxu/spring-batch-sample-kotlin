@@ -43,8 +43,6 @@ subprojects {
         testImplementation("org.springframework.boot:spring-boot-starter-test")
         testImplementation("org.springframework.batch:spring-batch-test")
         implementation("com.h2database:h2")
-        runtimeOnly("mysql:mysql-connector-java")
-
     }
 
     val javaVersion = "17"
