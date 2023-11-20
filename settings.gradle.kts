@@ -7,5 +7,6 @@ include(
     "data",
     ":data:mysql",
     ":data:h2",
+    ":data:orcale",
     "core"
 )
