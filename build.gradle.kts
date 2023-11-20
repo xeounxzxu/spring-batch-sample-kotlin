@@ -42,6 +42,7 @@ subprojects {
         implementation("org.springframework.boot:spring-boot-starter-jdbc")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+        implementation("io.github.microutils:kotlin-logging-jvm:2.0.11")
     }
 
     val javaVersion = "17"
