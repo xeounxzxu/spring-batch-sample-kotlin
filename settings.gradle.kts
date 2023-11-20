@@ -6,5 +6,6 @@ include(
     "cloud",
     "data",
     ":data:mysql",
+    ":data:h2",
     "core"
 )

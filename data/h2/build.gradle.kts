@@ -1,7 +1,3 @@
-plugins {
-    id("org.springframework.boot")
-}
-
 tasks.jar {
     enabled = true
 }
@@ -11,5 +7,5 @@ tasks.bootJar {
 }
 
 dependencies {
-    implementation(project(":core"))
+    implementation("com.h2database:h2")
 }

@@ -1,7 +1,3 @@
-plugins {
-    id("org.springframework.boot")
-}
-
 tasks.jar {
     enabled = false
 }
@@ -12,11 +8,18 @@ tasks.bootJar {
 
 dependencies {
 
-    implementation(project(":cloud"))
+    implementation("org.springframework.boot:spring-boot-starter-batch")
+    testImplementation("org.springframework.batch:spring-batch-test")
+
+    // mysql
     implementation(project(":data:mysql"))
-    implementation(project(":core"))
-    testImplementation(project(":cloud"))
     testImplementation(project(":data:mysql"))
+
+    implementation(project(":core"))
     testImplementation(project(":core"))
 
+    // h2
+    // todo : implementation vs runtimeOnly
+    implementation(project(":data:h2"))
+    testImplementation(project(":data:h2"))
 }
