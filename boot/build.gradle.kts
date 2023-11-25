@@ -15,8 +15,10 @@ dependencies {
     implementation(project(":data:mysql"))
     testImplementation(project(":data:mysql"))
 
-    // h2
-    // todo : implementation vs runtimeOnly
-    implementation(project(":data:h2"))
-    testImplementation(project(":data:h2"))
+
+
+//    // h2
+//    // todo : implementation vs runtimeOnly
+//    implementation(project(":data:h2"))
+//    testImplementation(project(":data:h2"))
 }

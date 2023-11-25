@@ -5,3 +5,12 @@ main2:
       driver-class-name: com.mysql.cj.jdbc.Driver
       username: default
       password: 1234
+
+## Batch DataSource
+batch:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306/default
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: default
+      password: 1234
