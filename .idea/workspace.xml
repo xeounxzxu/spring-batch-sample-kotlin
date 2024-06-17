@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="676aa27e-abd9-493b-b942-dee9436ce33d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/custom-feat-template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/BootApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/core/incrementer/DateIncrementer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/core/listener/SimpleJob1Listener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/core/listener/SimpleJob1OtherListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/job/HelloJobConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/job/RunningJob1Configuration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/job/RunningJob2Configuration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/job/RunningJob3Configuration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/job/RunningJob4Configuration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/job/SimpleJob3StepNextConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/job/dto/MsgDTO.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/job/tasklet/SimpleJob1Task1.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/runner/dto/UserDTO.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/runner/dto/UserSmailInfoDTO.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/runner/schedule/SimpleJob4Scheduler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/runner/web/HelloJobController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/kotlin/com/example/batchapp/runner/web/JobLauncherController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/main/resources/user.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/config/AbstractBaseJobTestConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/config/AbstractJobTestConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/config/BatchDataSourceTestConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/job/HelloJobConfigurationTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/job/RunningJob1TestConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/job/RunningJob2TestConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/job/RunningJob3ConfigurationTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/job/RunningJob4ConfigurationTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/kotlin/com/example/batchapp/utils/JobParametersUtil.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/src/test/resources/user.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/h2/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/h2/src/main/kotlin/com/example/batchapp/config/BatchDataSourceConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/h2/src/main/resources/application-h2.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql/src/main/kotlin/com/example/batchapp/mysql/config/BatchDataSourceConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql/src/main/kotlin/com/example/batchapp/mysql/config/MysqlDataSourceConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql/src/main/kotlin/com/example/batchapp/mysql/domain/BaseEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql/src/main/kotlin/com/example/batchapp/mysql/domain/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql/src/main/kotlin/com/example/batchapp/mysql/repository/UserRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql/src/main/resources/application-mysql.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql/src/test/kotlin/com/example/batchapp/mysql/MysqlApplicationTests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orcale/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orcale/src/main/kotlin/com/example/batchapp/orcale/config/OracleDataSourceConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orcale/src/main/kotlin/com/example/batchapp/orcale/domain/BaseEntity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orcale/src/main/kotlin/com/example/batchapp/orcale/domain/Item.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orcale/src/main/kotlin/com/example/batchapp/orcale/repository/ItemRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/orcale/src/main/resources/application-oracle.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wiki/README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="backup-20240617" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2i0X8RbW0FrrH6DpgPAELQylmyR" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jeoung-gyu/Workspace/spring-batch-petclinic-kotlin&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="676aa27e-abd9-493b-b942-dee9436ce33d" name="Changes" comment="" />
+      <created>1718628308635</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718628308635</updated>
+      <workItem from="1718628309647" duration="60000" />
+      <workItem from="1718628395005" duration="9000" />
+      <workItem from="1718628448411" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

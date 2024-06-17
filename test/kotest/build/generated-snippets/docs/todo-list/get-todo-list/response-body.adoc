@@ -1,0 +1,4 @@
+[source,json,options="nowrap"]
+----
+{"list":[{"title":"test","content":"test1"},{"title":"test","content":"test1"},{"title":"test","content":"test1"}]}
+----

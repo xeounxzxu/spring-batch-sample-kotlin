@@ -1,0 +1,6 @@
+[source,bash]
+----
+$ http DELETE 'http://localhost:8080/v1/todo-list/1' \
+    'Content-Type:application/json' \
+    'Content-Type:application/json'
+----

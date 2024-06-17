@@ -1,0 +1,8 @@
+logging:
+  level:
+    root: debug
+
+spring:
+  threads:
+    virtual:
+      enabled: true # spring 3.x.x 이상 일때 사용

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.example.kotestsample.web.TodoListControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.example.kotestsample.web.TodoListControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.kotestsample.web.html">com.example.kotestsample.web</a> &gt; TodoListControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.023s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Then: 200 상태 코드 와 response 를 반환 한다</td>
+<td class="success">0.017s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Then: 204 상태 코드를 내려준다.</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2024-02-13T22:35:04.374+09:00  INFO 93096 --- [er @coroutine#3] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.kotestsample.web.TodoListControllerTest]: TodoListControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-13T22:35:04.410+09:00  INFO 93096 --- [-1 @coroutine#5] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2024-02-13T22:35:04.410+09:00  INFO 93096 --- [-1 @coroutine#5] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-02-13T22:35:04.411+09:00  INFO 93096 --- [-1 @coroutine#5] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /v1/todo-list
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.kotestsample.web.TodoListController
+           Method = com.example.kotestsample.web.TodoListController#get()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:&quot;application/json&quot;]
+     Content type = application/json
+             Body = {&quot;list&quot;:[{&quot;title&quot;:&quot;test&quot;,&quot;content&quot;:&quot;test1&quot;},{&quot;title&quot;:&quot;test&quot;,&quot;content&quot;:&quot;test1&quot;},{&quot;title&quot;:&quot;test&quot;,&quot;content&quot;:&quot;test1&quot;}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2024-02-13T22:35:04.609+09:00  INFO 93096 --- [-1 @coroutine#6] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2024-02-13T22:35:04.609+09:00  INFO 93096 --- [-1 @coroutine#6] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-02-13T22:35:04.609+09:00  INFO 93096 --- [-1 @coroutine#6] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /v1/todo-list/1
+       Parameters = {}
+          Headers = [Content-Type:&quot;application/json&quot;, &quot;application/json&quot;]
+             Body = &lt;no character encoding set&gt;
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.kotestsample.web.TodoListController
+           Method = com.example.kotestsample.web.TodoListController#remove(long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 204
+    Error message = null
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.5</a> at 2024. 2. 13. 오후 10:35:04</p>
+</div>
+</div>
+</body>
+</html>
