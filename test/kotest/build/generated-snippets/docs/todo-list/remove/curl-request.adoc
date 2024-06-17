@@ -1,6 +1,0 @@
-[source,bash]
-----
-$ curl 'http://localhost:8080/v1/todo-list/1' -i -X DELETE \
-    -H 'Content-Type: application/json' \
-    -H 'Content-Type: application/json'
-----

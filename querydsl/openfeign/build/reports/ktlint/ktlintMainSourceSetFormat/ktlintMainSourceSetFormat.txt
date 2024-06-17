@@ -1,4 +1,0 @@
-[90m/Users/jeoung-gyu/Workspace/spring-kotlin/querydsl/openfeign/src/main/kotlin/com/example/openfeignapi/user/[0mUserController.kt[90m:[0m12[90m:1:[0m Class body should not start with blank line [90m(standard:no-empty-first-line-in-class-body)[0m
-
-Summary error count (descending) by rule:
-  standard:no-empty-first-line-in-class-body: 1

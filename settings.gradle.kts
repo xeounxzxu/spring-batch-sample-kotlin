@@ -1,33 +1,4 @@
-rootProject.name = "kotlin-core"
-
-include(
-    ":core:basic",
-    ":core:dynamicbean",
-    ":core:virtualthread",
-    ":core:samplecode",
-)
-
-include(
-    ":r2dbc",
-    ":r2dbc:callback",
-    ":r2dbc:data",
-)
-
-include(
-    ":test",
-    ":test:kotest",
-    ":test:apidocs",
-)
-
-include(
-    ":querydsl:openfeign",
-)
-
-include(
-    ":components",
-    ":components:yamlreader",
-    ":components:jpa"
-)
+rootProject.name = "spring-batch-petclinic-kotlin"
 
 pluginManagement {
     val kotlinVersion: String by settings
